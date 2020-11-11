@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main()
+int main()//햄버거 세트
 {
 	int a, b, c, d, e;
 	scanf("%d", &a);
