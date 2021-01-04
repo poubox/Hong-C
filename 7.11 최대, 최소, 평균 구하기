@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <float.h>
+
+// 7.11 최대, 최소, 평균 구하기
+int main()
+{
+	float max = -FLT_MAX;
+	float min = FLT_MAX;
+	float sum = 0.0;
+	float input;
+	int n = 0;
+
+	while (scanf("%f", &input) == 1) {
+		if (input < 0 || input>100)
+			continue;
+		max = max < input ? input : max;
+		min = min > input ? input : min;
+		sum += input;
+		n++;
+	}
+	if (n > 0)
+		printf("min = %f, max = %f, ave = %f\n", min, max, sum / n);
+	else
+		printf("No Input\n");
+}
