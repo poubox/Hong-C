@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+	int num, div;
+	bool isPrime; // 어떤 배열 요소가 소수인지 확인
+
+	printf("입력: ");
+	scanf("%d", &num);
+
+	isPrime = true;
+
+	for (div = 2; div<num; div++) {
+		if (num % div == 0)
+			isPrime = false;
+	}
+
+	if (isPrime)
+		printf("Input number is odd\n");
+	else
+		printf("Input number is even\n");
+}
