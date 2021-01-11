@@ -1,17 +1,38 @@
 #include<stdio.h>
 
+int get_long();
 int main()
+{
+	long number;
+
+	while (1) {
+		printf("Please input an integer between 1 and 100.\n");
+
+		number = get_long();
+
+		if (number > 1 && number < 100) {
+			printf("Ok.\n");
+			break;
+		}
+		else
+			printf("Wrong input. Please try again.\n");
+	}
+	printf("Your input %d is between 1 and 100. Thank you.\n", number);
+}
+
+int get_long()
 {
 	printf("Please input an integer and press enter.\n");
 
 	long input;
 	char c;
 
-	while (scanf("%1d", &input) != 1) {
+	while (scanf("%d", &input) != 1) {
 		printf("Your input - ");
-		while ((c = getchar()) != '\n') // 사용자 입력이 버퍼에 남아있음
-			putchar(c);                 // 버퍼 비우는 코드
+		while ((c = getchar()) != '\n') // 사용자 입력이 버퍼에 남아있음,  버퍼 비우는 코드
+			putchar(c);                 
 		printf(" - is not an integer. Please try again.\n");
 	}
-	printf("Your input %1d is an iteger. Thank you.\n", input);
+	printf("Your input %d is an iteger. Thank you.\n", input);
+	return input;
 }
